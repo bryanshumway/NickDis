@@ -1,0 +1,18 @@
+% !Tex root = dis.tex
+\chapter{Method}
+
+In the previous section I established that I provided an overview of the experiment I would run to explore a link between software refactoring and its corresponding concepts in Cognitive Load Theory. I proposed this through a classical CLT experimental design: run a 2x2 Factorial experiment split between novices and experienced software engineers for a control and refactored version of the JodaTime Java library trying to fix a bug and measuring time to complete, regressions introduced, and perceived cognitive load. In this section, I detail how I did so.
+Participants
+
+
+I solicited participants through an online questionnaire. This questionnaire (included in the appendices) was simply for intake screening and validated eligibility per compliance with the IRB requirements of the study and prerequisite knowledge. This questionnaire was distributed through college professor classrooms, company mailing lists, developer bulletin-boards, and online advertising. I contacted qualifying participants after assigning them to 1 of 4 blocks based on their responses (Novice/Control, Novice/Experimental, Expert/Control, Expert/Experimental), assigning them a randomized identifier, and discarding non-essential personal information to obtain their informed consent. I then scheduled a 1 hour session for conducting the study in person for local participants and sent a link to a virtual machine lab environment for remote participants.  
+
+\section{Materials Design}
+
+
+I developed the experimental refactored version of Joda Time relying heavily on Refactoring patterns while applying the CLT principles of sequencing, chunking, removing redundancy, and introducing germane cognitive load through the direct usage of Design Patterns. The exact same behavior was maintained, while new classes were added using SPROUT CLASS, new methods were added using EXTRACT METHOD, and variables were renamed and re-ordered for clarity. Afterwards, I ran SonarQube 5.4’s code analysis for metrics to compare their complexity using traditional software engineering tools. From a pure complexity metrics perspective, \texttt{DateTimeFormatterBuilder} went from a control complexity score of 550 to 531 in the refactored. The complexity per function dropped from 3.5 from to 3.4. The number of lines of code dropped by 58. The number of duplications dropped from 2.3\% to 0.7\%. \texttt{DateTimeFormatter} showed a slightly more pronounced effect. The complexity score dropped from 98 to 64. The complexity per function went from 2.5 to 1.7. The number of lines of code dropped by 110. The 2.9\% duplications dropped to 0. I’ve included the full elaboration of the set of transformations in the appendices.
+
+\section{Intervention, Measures, and Procedure}
+
+
+Participants reviewed a short tutorial on ISO8601 and debugging in their preferred development environment before commencing the timed study. Participants had the opportunity to ask clarifying questions and take notes before they started exploring the code. When ready, they began a 1-hour timed session where they could explore and modify code while trying to fix the bug. When they ran the tests to verify a fix, I took note of failing tests as a measure of regressions introduced. When the participants either fixed the bug or an hour passed, the session ended and I recorded the total elapsed time to the nearest minute. After the session was complete, participants received a survey via e-mail with 7-point Likert Scales with questions where they answered “how hard is this code to understand? (1 = very easy, 7 = very hard)” for the code they investigated.

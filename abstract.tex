@@ -1,0 +1,23 @@
+% !Tex root = dis.tex
+\begin{abstract}
+In this dissertation, I explored the state of the literature of software engineering and found that while multiple schools of thought exist, most practitioners argue there is no consensus on a theory to guide software engineering \cite{Briand2012,Johnson2012,Jacobson2009}. Agile practitioners have developed a set of guiding principles and tools commonly advocated in industry such as the SOLID design principles for writing code, but these remain experiential rather than experimentally verified. 
+
+
+Cognitive Science developed a theoretical framework for guiding the development of curricular material called Cognitive Load Theory (CLT)\cite{Sweller1988,Sweller1991}.  CLT derives from the earliest discoveries of neuroscience \cite{Miller1956}, its central precepts involve the design of instructional content and arrangement in a way that is cognitively available. CLT seeks to understand the human memory model, specifically the limits of short-term “working memory” \cite{Baddeley2003}, and optimize content for memorability. CLT has been effectively applied in a variety of instructional materials and verified via lab experiments since the in 1970s.
+
+
+Software is essentially a concretion of a programmer’s understanding of the world to create emergent behavior. The core activity of programming is the organization and arrangement of information as realized in data structures and algorithms. Software has explored the complexity of this practice through a variety of metrics, some of which include McCabe’s Complexity Metrics \cite{McCabe1976}, Halstead’s Software Science \cite{Halstead1977}, Albrecht’s Function Points \cite{Albrecht1983}, and Wang’s Cognitive Complexity Metrics \cite{Wang2009,Shao2003}. I found no examples of known metrics that leveraged CLT in their development.
+
+
+My work explores a conceptual link between CLT and software engineering best practices. I provide a partial mapping of refactoring techniques and SOLID principles to CLT principles. This link moves software engineering towards a theoretical framework based on human cognition. This dualistic tie can help both fields. Instructional Designers can organize webs of content according to distributed systems design principles, while software engineers can leverage principles backed by a theoretical framework, experimental approach, and known principles of human cognition.
+
+
+I designed an experiment that explored the effects of applying these principles on an established software library. I measured the perceived cognitive load, time to debug/mean-time to resolution, and defects introduced via broken tests using a 2x2 Factorial Design with experienced and novice software engineers. With a sample size of n=188, I measured that the average mean time to resolution and number of bugs reported by both experienced and novice programmers. I found that the mean time to resolution and introduced defect rate is less for both experienced and novice developers when debugging the refactored code, aligning with concepts from Cognitive Load Theory. I also find that those programmers reported less perceived cognitive load. 
+
+
+Agile design principles combined with the precepts of Cognitive Load Theory can produce software that is measurably easier to debug and understand. Augmenting known refactoring patterns with additional heuristics--such as managing the size of classes and methods to around Miller’s Magic Number and naming concepts according to their usage-- produces novel software architectural principles as a consequence of this work.  This has implications on Cognitive Load as a measurement for and conceptual backbone of technical debt. Future work should probe advanced ways of measuring cognitive load and programmer experience and the effect of programming language and domain. 
+
+
+This research provides a significant contribution by applying concepts and experimental design from CLT to software engineering. The study measurably shows that code refactored according to specific principles designed to manage cognitive load results in software that is better understood and easier to debug. Looking at code comprehensibility for programmers through the lens of CLT may lead to new techniques of quantifying readability and analyzing technical debt.   
+
+\end{abstract}
